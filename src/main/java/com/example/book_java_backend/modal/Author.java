@@ -19,7 +19,7 @@ public class Author {
     private String address;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors",cascade=CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
 
     public Author() {

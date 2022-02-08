@@ -8,4 +8,7 @@ public interface AuthorService {
     public  Author saveAuthor(Author author);
 
     public List<Author> getAllAuthors();
+
+
+    public void deleteAuthor(Long authorId);
 }

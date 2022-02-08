@@ -23,4 +23,11 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> getAllAuthors() {
         return (List<Author>) authorRepository.findAll();
     }
+
+    @Override
+    public void deleteAuthor(Long authorId) {
+        authorRepository.deleteById(authorId);
+    }
+
+
 }
