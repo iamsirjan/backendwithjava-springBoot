@@ -6,7 +6,7 @@ import com.example.book_java_backend.modal.Payment;
 import java.util.List;
 
 public interface BookService {
-    public Payment saveBook(Payment payment);
+    public Book saveBook(Book book);
 
-    public List<Payment> getAllBooks();
+    public List<Book> getAllBooks();
 }

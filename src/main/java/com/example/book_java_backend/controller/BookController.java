@@ -16,12 +16,12 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping("/add/books")
-    public  void saveBook(@RequestBody Payment payment){
-        bookService.saveBook(payment);
+    public  void saveBook(@RequestBody Book book){
+        bookService.saveBook(book);
     }
 
     @GetMapping("/get/books")
-    public List<Payment> getAllBooks() {
+    public List<Book> getAllBooks() {
         return  bookService.getAllBooks();
     }
 }

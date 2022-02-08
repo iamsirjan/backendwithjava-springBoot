@@ -14,13 +14,13 @@ public class BookServiceImpl implements  BookService{
     @Autowired
     private BookRepository bookRepository;
     @Override
-    public Payment saveBook(Payment payment) {
+    public Book saveBook(Book book) {
 
-        return  bookRepository.save(payment);
+        return  bookRepository.save(book);
     }
 
     @Override
-    public List<Payment> getAllBooks() {
-        return  (List<Payment>) bookRepository.findAll();
+    public List<Book> getAllBooks() {
+        return  (List<Book>) bookRepository.findAll();
     }
 }
