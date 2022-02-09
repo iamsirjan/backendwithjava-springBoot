@@ -36,7 +36,7 @@ public class Book {
 
 
     @JsonIgnore
-    @OneToMany(mappedBy = "books")
+    @OneToMany(mappedBy = "books",cascade=CascadeType.ALL)
     private Set<Payment> payments ;
 
     public Set<Payment> getPayments() {

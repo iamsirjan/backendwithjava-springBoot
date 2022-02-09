@@ -29,5 +29,16 @@ public class AuthorServiceImpl implements AuthorService {
         authorRepository.deleteById(authorId);
     }
 
+    @Override
+    public void updateAuthor(Long authorId, Author author) {
+        Author authorFromDb = authorRepository.findById(authorId).get();
+        System.out.println(authorFromDb.toString());
+        authorFromDb.setAddress(author.getAddress());
+        authorFromDb.setAge(author.getAge());
+        authorFromDb.setName(author.getName());
+
+        authorRepository.save(authorFromDb);
+    }
+
 
 }
