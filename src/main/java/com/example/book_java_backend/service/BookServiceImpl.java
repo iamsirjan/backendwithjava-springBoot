@@ -23,4 +23,25 @@ public class BookServiceImpl implements  BookService{
     public List<Book> getAllBooks() {
         return  (List<Book>) bookRepository.findAll();
     }
+
+    @Override
+    public void updateBook(Long bookId, Book book) {
+     Book bookFromDb = bookRepository.findById(bookId).get();
+     bookFromDb.setName(book.getName());
+     bookFromDb.setDescription(book.getDescription());
+     bookFromDb.setPrice(book.getPrice());
+     bookFromDb.setDiscount(book.getDiscount());
+     bookFromDb.setDiscountPercent(book.getDiscountPercent());
+     bookFromDb.setRating(book.getRating());
+     bookFromDb.setSold(book.getSold());
+     bookFromDb.setStock(book.getStock());
+     bookFromDb.setAuthors(book.getAuthors());
+     bookFromDb.setCategories(book.getCategories());
+     bookRepository.save(bookFromDb);
+    }
+
+    @Override
+    public void deleteBook(Long bookId) {
+        bookRepository.deleteById(bookId);
+    }
 }
