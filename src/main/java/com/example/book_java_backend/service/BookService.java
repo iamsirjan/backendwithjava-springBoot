@@ -9,4 +9,8 @@ public interface BookService {
     public Book saveBook(Book book);
 
     public List<Book> getAllBooks();
+
+    public void updateBook(Long bookId, Book book);
+
+    public void deleteBook(Long bookId);
 }

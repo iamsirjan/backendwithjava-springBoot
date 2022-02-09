@@ -25,13 +25,13 @@ public class AuthorController {
         return  authorService.getAllAuthors();
     }
 
-    @DeleteMapping("/delete/{authorId}")
+    @DeleteMapping("/delete/author/{authorId}")
     private void deleteAuthor(@PathVariable("authorId") Long authorId)
     {
         authorService.deleteAuthor(authorId);
     }
 
-    @PutMapping("/update/{authorId}")
+    @PutMapping("/update/author/{authorId}")
     private  void updateAuthor(@PathVariable("authorId") Long authorId,@RequestBody Author author) {
         authorService.updateAuthor(authorId,author);
     }
