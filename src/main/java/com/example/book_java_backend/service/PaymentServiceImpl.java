@@ -20,4 +20,23 @@ public class PaymentServiceImpl implements  PaymentService {
     public List<Payment> getAllPayments() {
         return (List<Payment>) paymentRepository.findAll();
     }
+
+    @Override
+    public void deletePayment(Long paymentId) {
+            paymentRepository.deleteById((paymentId));
+    }
+
+    @Override
+    public void updatePayment(Long paymentId, Payment payment) {
+        Payment paymentFromDb = paymentRepository.findById(paymentId).get();
+        paymentFromDb.setDay(payment.getDay());
+        paymentFromDb.setTotal(payment.getTotal());
+        paymentFromDb.setType(payment.getType());
+        paymentFromDb.setReturned(payment.getReturned());
+        paymentFromDb.setFine(payment.getFine());
+        paymentFromDb.setPaid(payment.getPaid());
+        paymentFromDb.setUsers(payment.getUsers());
+        paymentFromDb.setBooks(payment.getBooks());
+        paymentRepository.save(paymentFromDb);
+    }
 }

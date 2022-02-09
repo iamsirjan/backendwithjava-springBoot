@@ -26,7 +26,7 @@ public class User {
 
 
     @JsonIgnore
-    @ManyToOne()
+    @ManyToOne(cascade=CascadeType.ALL)
     private Payment payments ;
 
 
