@@ -24,4 +24,15 @@ public class PaymentController {
     public List<Payment> getAllPayments() {
         return  paymentService.getAllPayments();
     }
+
+
+    @DeleteMapping("/delete/payment/{paymentId}")
+    private  void deletePayment(@PathVariable("paymentId") Long paymentId) {
+        paymentService.deletePayment(paymentId);
+    }
+
+    @PutMapping("/update/payment/{paymentId}")
+    private  void updatePayment(@PathVariable("paymentId")Long paymentId, Payment payment) {
+        paymentService.updatePayment(paymentId,payment);
+    }
 }

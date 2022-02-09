@@ -25,4 +25,14 @@ public class CategoryController {
     public List<Category> getAllCategories() {
         return  categoryService.getAllCategories();
     }
+
+    @DeleteMapping("/delete/category/{categoryId}")
+    private  void deleteCategory(@PathVariable("categoryId") Long categoryId) {
+        categoryService.deleteCategory(categoryId);
+    }
+
+    @PutMapping("/update/category/{categoryId}")
+    private  void updateCategory(@PathVariable("categoryId") Long categoryId,@RequestBody Category category) {
+        categoryService.updateCategory(categoryId,category);
+    }
 }

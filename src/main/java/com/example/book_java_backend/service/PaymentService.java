@@ -9,4 +9,8 @@ public interface PaymentService {
     public Payment savePayment(Payment payment);
 
     public List<Payment> getAllPayments();
+
+    public void deletePayment(Long paymentId);
+
+    public void updatePayment(Long paymentId, Payment payment);
 }

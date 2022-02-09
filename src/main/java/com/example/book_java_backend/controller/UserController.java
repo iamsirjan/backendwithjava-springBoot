@@ -22,4 +22,14 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @DeleteMapping("/delete/user/{userId}")
+    public void deleteUser(@PathVariable("userId") Long userId) {
+        userService.deleteUser(userId);
+    }
+
+    @PutMapping("/update/user/{userId}")
+    public  void updateUser(@PathVariable("userId") Long userId,@RequestBody User user) {
+        userService.updateUser(userId,user);
+    }
 }
